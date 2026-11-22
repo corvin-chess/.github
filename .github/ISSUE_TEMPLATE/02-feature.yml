@@ -1,0 +1,69 @@
+name: Feature request
+description: Propose a change that fits Corvin principles.
+title: "[feat] "
+labels: []
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Feature work must respect free-forever principles, original chess assets, accessibility, and privacy. See CONTRIBUTING.md and GOVERNANCE.md.
+  - type: dropdown
+    id: repository
+    attributes:
+      label: Repository
+      description: Best home for this work if known.
+      options:
+        - web
+        - server
+        - chess-core
+        - engine
+        - engine-train
+        - worker
+        - fairplay
+        - puzzles
+        - explorer
+        - broadcast
+        - design-system
+        - assets
+        - mobile
+        - sdk
+        - bots
+        - translations
+        - infra
+        - website
+        - .github
+        - unsure
+    validations:
+      required: true
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem
+      description: What player or developer problem does this solve?
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposal
+      description: Describe the smallest change that would solve it.
+    validations:
+      required: true
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives considered
+      description: Optional. What else did you consider?
+    validations:
+      required: false
+  - type: checkboxes
+    id: principles
+    attributes:
+      label: Principle check
+      options:
+        - label: This does not introduce ads, paywalls, trackers, or premium-only features
+          required: true
+        - label: This does not require third-party chess engines, weights, pieces, boards, or sounds
+          required: true
+        - label: I accept that maintainers may decline or reshape the request
+          required: true

@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Security vulnerability
+    url: https://github.com/corvin-chess/.github/blob/main/SECURITY.md
+    about: Read SECURITY.md, then use that repository's Security tab private advisory form when enabled. Never file a public issue for an unfixed vulnerability.
+  - name: Support and contribution help
+    url: https://github.com/corvin-chess/.github/blob/main/SUPPORT.md
+    about: Read SUPPORT.md and CONTRIBUTING.md before asking process questions.
