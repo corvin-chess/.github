@@ -1,0 +1,19 @@
+name: community-health
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+      - name: Verify profile README
+        run: node scripts/verify-profile-readme.mjs
+      - name: Verify community health
+        run: node scripts/verify-community-health.mjs
