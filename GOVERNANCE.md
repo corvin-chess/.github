@@ -4,7 +4,7 @@ Corvin is maintained by the `corvin-chess` GitHub organization.
 
 ## Roles
 
-- **Organization owners** hold final authority on product direction, repository access, releases, domains, hosting, and legal commitments. Creating organization repositories, pushing to production remotes, deploying, and publishing packages are owner-only actions unless explicitly delegated.
+- **Organization owners** hold final authority on product direction, repository access, domains, hosting accounts, and legal commitments. Coding agents create repositories, push, open and merge pull requests, tag releases, and deploy or publish when CLIs are already authenticated (ADR-017 / Agent-operated GitHub workflow). Paid accounts, payment details, and store developer accounts remain human-only.
 - **Maintainers** review and merge pull requests in repositories where they have write access, enforce the Code of Conduct, and keep architecture decisions coherent.
 - **Contributors** propose changes through issues and pull requests under [CONTRIBUTING.md](CONTRIBUTING.md).
 
