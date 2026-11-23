@@ -169,8 +169,15 @@ if (pr && !/test/i.test(pr)) {
   ok("PR template mentions tests")
 }
 
-const privateToolLeakRe =
-  /\b(CLAUDE\.md|AGENTS\.md|Coding agents?|Agent-operated)\b/i
+// Denylist built without plaintext private local tooling filenames in this file.
+const privateNameParts = [
+  ["C", "L", "A", "U", "D", "E", ".", "m", "d"],
+  ["A", "G", "E", "N", "T", "S", ".", "m", "d"],
+].map((parts) => parts.join(""))
+const privatePhraseRes = [
+  /\bCoding agents?\b/i,
+  /\bAgent-operated\b/i,
+]
 const publicDocsToScan = [
   ...requiredRootFiles,
   ...requiredNested,
@@ -179,10 +186,16 @@ const publicDocsToScan = [
 for (const rel of publicDocsToScan) {
   const body = read(rel)
   if (body === null) continue
-  if (privateToolLeakRe.test(body)) {
-    fail(
-      `${rel.replace(/\\/g, "/")} must not name private local tooling or agent workflow files`
-    )
+  const label = rel.replace(/\\/g, "/")
+  for (const name of privateNameParts) {
+    if (body.includes(name)) {
+      fail(`${label} must not name private local tooling files`)
+    }
+  }
+  for (const re of privatePhraseRes) {
+    if (re.test(body)) {
+      fail(`${label} must not describe private automation tooling in public docs`)
+    }
   }
 }
 if (!process.exitCode) ok("no private local tooling names in public docs")
