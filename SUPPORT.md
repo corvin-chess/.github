@@ -13,7 +13,7 @@ Corvin repositories and the public docs site are still being bootstrapped. There
 
 ## Self-hosting and operations
 
-Operational runbooks will live in the `infra` repository once it exists. Agents and contributors must not deploy production systems; deployment remains an owner action.
+Operational runbooks will live in the `infra` repository once it exists. Contributors must not deploy production systems; deployment remains an owner action.
 
 ## Fair play and account actions
 

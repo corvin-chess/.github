@@ -169,6 +169,24 @@ if (pr && !/test/i.test(pr)) {
   ok("PR template mentions tests")
 }
 
+const privateToolLeakRe =
+  /\b(CLAUDE\.md|AGENTS\.md|Coding agents?|Agent-operated)\b/i
+const publicDocsToScan = [
+  ...requiredRootFiles,
+  ...requiredNested,
+  "profile/README.md",
+]
+for (const rel of publicDocsToScan) {
+  const body = read(rel)
+  if (body === null) continue
+  if (privateToolLeakRe.test(body)) {
+    fail(
+      `${rel.replace(/\\/g, "/")} must not name private local tooling or agent workflow files`
+    )
+  }
+}
+if (!process.exitCode) ok("no private local tooling names in public docs")
+
 if (!process.exitCode) {
   console.log("All CV-030 community health checks passed.")
 }
