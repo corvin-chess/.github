@@ -22,4 +22,4 @@
 - [ ] No third-party chess engines, weights, piece sets, boards, or sounds introduced
 - [ ] No fair-play thresholds, weights, or detection models committed
 - [ ] New UI strings have complete `en` and `it` locale entries
-- [ ] No emoji; no AI tool attribution in commits or docs
+- [ ] No emoji; no tool attribution in commits or docs
