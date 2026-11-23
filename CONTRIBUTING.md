@@ -15,7 +15,7 @@ Thank you for helping build a free, open source chess platform. Online play agai
 3. UI strings go through locale files. Ship complete `en` and `it` entries for any new user-visible string.
 4. Accessibility is a release blocker: keyboard play, screen reader announcements, and WCAG 2.2 AA contrast and focus behavior for UI work.
 5. No emoji in commits, code, docs, or UI copy for Corvin repositories.
-6. Never mention AI tools in commits, code comments, metadata, or documentation. No `Co-authored-by` lines for tools.
+6. No tool attribution in commits, code comments, metadata, or documentation. No `Co-authored-by` lines for tools.
 
 ## How to contribute
 
